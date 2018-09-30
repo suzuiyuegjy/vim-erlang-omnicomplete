@@ -171,8 +171,7 @@ function s:ErlangFindExternalFunc(module, base)
 
     let compl_words = []
     let functions = system('escript ' . fnameescape(s:erlang_complete_file) .
-                          \' list-functions ' . fnameescape(a:module) .
-                          \' --basedir ' .  fnameescape(expand('%:p:h')))
+                          \' list-functions ' . fnameescape(a:module))
     " We iterate on functions in the given module that start with `base` and
     " add them to the completion list.
     for function_spec in split(functions, '\n')
