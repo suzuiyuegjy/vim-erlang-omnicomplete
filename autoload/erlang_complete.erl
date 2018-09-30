@@ -140,7 +140,7 @@ run(Target) ->
             BaseDir ->
                 filename:absname(BaseDir)
         end,
-
+    io:format("abs_dir: ~p~n",[AbsDir]),
     {BuildSystem, Files} = guess_build_system(AbsDir),
     %% TODO Where does {result, _} and error come from?
     {opts, _} = load_build_files(BuildSystem, AbsDir, Files),
